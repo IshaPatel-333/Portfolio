@@ -89,24 +89,24 @@ const Portfolio = () => {
     const lowerMessage = userMessage.toLowerCase();
     
     if (lowerMessage.includes('skill') || lowerMessage.includes('technology')) {
-      return "Isha has expertise in multiple areas: Frontend (React, Next.js, Vue.js), Backend (Node.js, Python, Django), AI/ML (TensorFlow, PyTorch, OpenAI API), Cloud (AWS, Docker), and Blockchain (Solidity, Web3.js). She's particularly strong in full-stack development with modern JavaScript frameworks.";
+      return "Ishaa has expertise in multiple areas: Frontend (React, Next.js, Vue.js), Backend (Node.js, Python, Django), AI/ML (TensorFlow, PyTorch, OpenAI API), Cloud (AWS, Docker), and Blockchain (Solidity, Web3.js). She's particularly strong in full-stack development with modern JavaScript frameworks.";
     } else if (lowerMessage.includes('experience') || lowerMessage.includes('work')) {
-      return "Isha has 5+ years of experience as a Full Stack Developer. She's currently a Senior Developer at Tech Innovations Inc., leading development of applications serving 100K+ users. Previously worked at Digital Solutions Ltd. and StartUp Ventures, gaining diverse experience across the tech stack.";
+      return "Ishaa has 5+ years of experience as a Full Stack Developer. She's currently a Senior Developer at Tech Innovations Inc., leading development of applications serving 100K+ users. Previously worked at Digital Solutions Ltd. and StartUp Ventures, gaining diverse experience across the tech stack.";
     } else if (lowerMessage.includes('project')) {
-      return "Isha has built 6+ impressive projects including an AI-powered task manager, e-commerce platform, data visualization dashboard, blockchain voting system, and music recommendation engine. All projects showcase modern technologies, clean architecture, and are live with demos available.";
+      return "Ishaa has built 6+ impressive projects including an AI-powered task manager, e-commerce platform, data visualization dashboard, blockchain voting system, and music recommendation engine. All projects showcase modern technologies, clean architecture, and are live with demos available.";
     } else if (lowerMessage.includes('education') || lowerMessage.includes('certificate')) {
-      return "Isha holds AWS Solutions Architect, TensorFlow Developer, and React Advanced certifications. She has published research papers on AI-driven interfaces and blockchain security. Always learning new technologies through continuous education and hands-on projects.";
+      return "Ishaa holds AWS Solutions Architect, TensorFlow Developer, and React Advanced certifications. She has published research papers on AI-driven interfaces and blockchain security. Always learning new technologies through continuous education and hands-on projects.";
     } else if (lowerMessage.includes('contact') || lowerMessage.includes('hire') || lowerMessage.includes('available')) {
-      return "Isha is open to new opportunities! You can reach her at isha@example.com, connect on LinkedIn, or check out her GitHub. She's particularly interested in AI/ML projects, full-stack development roles, and innovative tech startups.";
+      return "Ishaa is open to new opportunities! You can reach her at isha@example.com, connect on LinkedIn, or check out her GitHub. She's particularly interested in AI/ML projects, full-stack development roles, and innovative tech startups.";
     } else if (lowerMessage.includes('ai') || lowerMessage.includes('machine learning') || lowerMessage.includes('ml')) {
-      return "Isha is passionate about AI/ML! She has hands-on experience with TensorFlow, PyTorch, OpenAI API, and has built several AI-powered applications. Her projects include chatbots, recommendation systems, and task prioritization using machine learning algorithms.";
+      return "Ishaa is passionate about AI/ML! She has hands-on experience with TensorFlow, PyTorch, OpenAI API, and has built several AI-powered applications. Her projects include chatbots, recommendation systems, and task prioritization using machine learning algorithms.";
     } else if (lowerMessage.includes('location') || lowerMessage.includes('based')) {
-      return "Isha is based in Mumbai, India, but has experience working with distributed teams globally. She's open to remote work opportunities and has collaborated with teams across different time zones effectively.";
+      return "Ishaa is based in Mumbai, India, but has experience working with distributed teams globally. She's open to remote work opportunities and has collaborated with teams across different time zones effectively.";
     } else {
       const genericResponses = [
-        "That's a great question! Isha has extensive experience in full-stack development with a focus on modern web technologies and AI integration. What specific aspect would you like to know more about?",
-        "Isha loves tackling challenging technical problems! She's worked on everything from e-commerce platforms to AI-powered applications. Is there a particular project or skill you'd like to discuss?",
-        "Thanks for your interest in Isha's work! She's passionate about building innovative solutions using cutting-edge technologies. Feel free to ask about her projects, experience, or technical expertise.",
+        "That's a great question! Ishaa has extensive experience in full-stack development with a focus on modern web technologies and AI integration. What specific aspect would you like to know more about?",
+        "Ishaa loves tackling challenging technical problems! She's worked on everything from e-commerce platforms to AI-powered applications. Is there a particular project or skill you'd like to discuss?",
+        "Thanks for your interest in Ishaa's work! She's passionate about building innovative solutions using cutting-edge technologies. Feel free to ask about her projects, experience, or technical expertise.",
       ];
       return genericResponses[Math.floor(Math.random() * genericResponses.length)];
     }
@@ -134,7 +134,7 @@ const Portfolio = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              Isha.dev
+              Ishaa.dev
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
@@ -155,32 +155,71 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-20 pb-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="relative inline-block mb-8">
-            <div className="w-48 h-48 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 p-1 animate-pulse">
-              <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center text-6xl">
-                👩‍💻
-              </div>
+      <section id="home" className="relative pt-20 pb-16 px-4 overflow-hidden">
+        {/* Aurora Glow */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-cyan-900/10 to-transparent blur-3xl"></div>
+
+        {/* Floating Particles */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(20)].map((_, i) => (
+            <span
+              key={i}
+              className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-70 animate-particle"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 10}s`,
+                animationDuration: `${10 + Math.random() * 10}s`,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="relative max-w-4xl mx-auto text-center">
+          {/* Avatar with orbit + float */}
+          <div className="relative w-48 h-48 mx-auto mb-8 animate-float">
+            <div className="absolute inset-0 rounded-full border-4 border-cyan-400/40 animate-spin-slow"></div>
+            <div className="absolute inset-2 rounded-full border-2 border-purple-500/30 animate-spin-slower"></div>
+
+            <div className="w-full h-full rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
+              <img
+                src="/my_img.jpg"
+                alt="Ishaa Avatar"
+                className="w-full h-full object-cover rounded-full object-top"
+              />
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
-            Hi, I'm Isha
+
+          {/* Heading with gradient sweep */}
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient bg-200%">
+            Hi, I'm Ishaa
           </h1>
+
           <p className="text-xl md:text-2xl text-gray-400 mb-8 leading-relaxed">
-          AI/ML Enthusiast | Full-Stack Development <br />
-          Turning ideas into impactful solutions.          
+            AI/ML Enthusiast | Full-Stack Development <br />
+            Turning ideas into impactful solutions.
           </p>
+
+          {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#projects" className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transform transition-all duration-200 shadow-lg">
+            <a
+              href="#projects"
+              className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transform transition-all duration-200 shadow-lg"
+            >
               View My Work
             </a>
-            <button className="border border-cyan-400 text-cyan-400 px-8 py-3 rounded-full font-semibold hover:bg-cyan-400 hover:text-gray-900 transition-all duration-200">
+            <a
+              href="/ISHA-PATEL-RESUME.pdf"
+              download="Ishaa-Patel-Resume.pdf"
+              className="border border-cyan-400 text-cyan-400 px-8 py-3 rounded-full font-semibold hover:bg-cyan-400 hover:text-gray-900 transition-all duration-200"
+            >
               Download Resume
-            </button>
+            </a>
           </div>
         </div>
       </section>
+
+
 
       {/* Projects Section */}
       <section id="projects" className="py-16 px-4 bg-gray-800/50">

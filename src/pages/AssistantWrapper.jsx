@@ -5,7 +5,9 @@ import skills from "../data/skills";
 
 function AssistantWrapper() {
   const [chatOpen, setChatOpen] = useState(false);
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([
+    { sender: "bot", text: "Hi 👋, how can I help you today?" },
+  ]);
   const [input, setInput] = useState("");
   const chatMessagesRef = useRef(null);
 
@@ -66,7 +68,7 @@ function AssistantWrapper() {
     setMessages(newMessages);
     setInput("");
 
-    // Scroll to bottom
+    // Auto-scroll to bottom
     setTimeout(() => {
       chatMessagesRef.current?.scrollTo({
         top: chatMessagesRef.current.scrollHeight,
@@ -80,22 +82,34 @@ function AssistantWrapper() {
       {/* Floating Button */}
       <button
         onClick={() => setChatOpen(!chatOpen)}
-        className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:scale-110 transform transition-all duration-200"
+        className="w-14 h-14 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:scale-110 transform transition-all duration-200"
       >
         <MessageCircle />
       </button>
 
       {/* Chat Window */}
       {chatOpen && (
-        <div className="absolute bottom-20 right-0 w-96 h-[450px] bg-[#0f172a] rounded-2xl shadow-2xl flex flex-col border border-gray-700 overflow-hidden">
+        <div
+          className="
+            fixed bottom-20 
+            left-1/2 -translate-x-1/2
+            w-[95vw] max-w-sm 
+            h-[70vh] 
+            bg-[#0f172a] rounded-2xl shadow-2xl flex flex-col border border-gray-700 overflow-hidden
+            
+            sm:bottom-20 sm:right-0 sm:left-auto sm:translate-x-0
+            sm:w-96 sm:h-[450px]
+          "
+        >
           {/* Header */}
-          <div className="bg-gradient-to-r from-cyan-400 to-purple-500 p-4 flex justify-between items-center">
+          <div className="bg-gradient-to-r from-cyan-400 to-purple-500 p-4 flex justify-between items-center animate-gradient-x bg-200%">
             <div>
-              <h3 className="text-white font-semibold text-lg">
-                Isha's AI Assistant
+              <h3 className="text-white font-semibold text-lg flex items-center gap-2">
+                <span role="img" aria-label="robot">🤖</span>
+                Ishaa's AI Assistant
               </h3>
               <p className="text-gray-200 text-xs">
-                Ask me anything about Isha's skills or experience!
+                Ask me anything about Ishaa's skills or experience!
               </p>
             </div>
             <button
@@ -135,6 +149,7 @@ function AssistantWrapper() {
           </div>
         </div>
       )}
+
     </div>
   );
 }
